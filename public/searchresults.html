@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CocktailDex - Search Results</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen" />
+  <script src="resources/js/jquery-3.1.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="resources/js/app.js"></script>
+  <script src="resources/js/search.js"></script>
+  <script src="resources/js/navbar.js"></script>
+  <style type="text/css">
+    h4 {
+      text-align: left;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #424747;
+    }
+    h5 {
+      font-size: 16px;
+      color: #424747;
+      font-style: italic;
+    }
+    #filter, {
+      display: inline-block;
+    }
+    #filterwrapper {
+      height: 600px;
+    }
+    #filterwrapper {
+      width: 20%;
+      min-width: 250px;
+      float: left;
+    }
+    .categorywrapper {
+      text-align: left;
+      color: #424747;
+    }
+    #filter {
+      padding-left: 30px;
+      padding-right: 20px;
+    }
+    #filter ul {
+      padding: 0;
+      list-style-type: none;
+    }
+    @media screen and (max-width:960px) {
+      h5 {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      #filterwrapper {
+        height: 230px;
+        width: 100%;
+        float: none;
+      }
+      #filter {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      .categorywrapper {
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin: auto;
+        min-width: 150px;
+        padding: 0;
+      }
+      .categorywrapper li {
+        padding-left: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="mainnav">
+    <ul id="globalnav" class="sitenav">
+      <li><a href="index.html">Home</a></li>
+      <li><a onclick="accessAsUser('mycocktails.html')">My Cocktails</a></li>
+      <li><a onclick="accessAsUser('myfavorites.html')">My Favorites</a></li>
+      <li><a onclick="accessAsUser('myShelf.html')">My Shelf</a></li>
+      <li><a href="about.html">About/FAQs</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="auth">
+        <ul>
+          <li id="signinli"><a class="authlink" href="signin.html">Sign in</a></li>
+          <li id="signoutli" class="hide"><a class="authlink" onclick="signOut()">Sign out</a></li>
+        </ul>
+      </li>
+      <li class="navicon">
+        <a href="javascript:;" onclick="navRespond()">&#9776;</a>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <h1>Search Results</h1>
+    <div id="filterwrapper">
+      <div id="filter">
+        <h4>Filter your drinks!</h4>
+        <div class="categorywrapper">
+          <h5>Number of Ingredients:</h5>
+          <ul>
+            <li>
+              <input id="num0" type="checkbox" name="num_ingredient" value="Any" checked/>
+              <label for="num0">Any</label><br/>
+            </li>
+            <li>
+              <input id="num1" type="checkbox" name="num_ingredient" value="1-3" />
+              <label for="num1">1-3</label><br/>
+            </li>
+            <li>
+              <input id="num2" type="checkbox" name="num_ingredient" value="4-5" />
+              <label for="num2">4-5</label><br/>
+            </li>
+            <li>
+              <input id="num3" type="checkbox" name="num_ingredient" value="6+" />
+              <label for="num3">6+</label><br/>
+            </li>
+          </ul>
+        </div>
+        <!--div class="categorywrapper">
+          <h5>Spirit Type:</h5>
+          <ul>
+            <li>
+              <input id="spirit1" type="checkbox" name="spirit" value="1"/>
+              <label for="spirit1">Bourbon</label><br/>
+            </li>
+            <li>
+              <input id="spirit2" type="checkbox" name="spirit" value="2"/>
+              <label for="spirit2">Gin</label><br/>
+            </li>
+            <li>
+              <input id="spirit3" type="checkbox" name="spirit" value="3"/>
+              <label for="spirit3">Rum</label><br/>
+            </li>
+            <li>
+              <input id="spirit4" type="checkbox" name="spirit" value="4"/>
+              <label for="spirit4">Vodka</label><br/>
+            </li>
+            <li>
+              <input id="spirit5" type="checkbox" name="spirit" value="5"/>
+              <label for="spirit5">Whiskey</label><br/>
+            </li>
+            <li>
+              <input id="spirit6" type="checkbox" name="spirit" value="6"/>
+              <label for="spirit6">Wine</label><br/>
+            </li>
+          </ul>
+        </div>
+        <div class="categorywrapper">
+          <h5>Glass Type:</h5>
+          <ul>
+            <li>
+              <input id="glass1" type="checkbox" name="glass" value="1"/>
+              <label for="glass1">Low-ball</label><br/>
+            </li>
+            <li>
+              <input id="glass2" type="checkbox" name="glass" value="2"/>
+              <label for="glass2">High-ball</label><br/>
+            </li>
+            <li>
+              <input id="glass3" type="checkbox" name="glass" value="3"/>
+              <label for="glass3">Martini</label><br/>
+            </li>
+            <li>
+              <input id="glass4" type="checkbox" name="glass" value="4"/>
+              <label for="glass4">Cocktail</label><br/>
+            </li>
+          </ul>
+        </div-->
+        <input id="filterbtn" class="input1" type="submit" value="Filter"/>
+      </div>
+    </div>
+    <div id="resultswrapper">
+      <div id="res1" class="resultscol borderonRight">
+        <ul id = "resultslist">
+        </ul>
+      </div>
+      <div id="res2" class="resultscol">
+        <ul>
+          <li id ="fullItem"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <nav class="authors">
+      <a href="team.html">Meet our Team!</a>
+    </nav>
+  </footer>
+</body>
+</html>

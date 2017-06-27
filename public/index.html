@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CocktailDex - Home</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen"/>
+  <script src="resources/js/jquery-3.1.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="resources/js/app.js"></script>
+  <script src="resources/js/navbar.js"></script>
+  <script type="text/javascript">
+    var drinks = {
+      'drink0': {
+        'imgsrc': 'resources/imgs/Moscow-Mule.jpg',
+        'name': 'Moscow Mule',
+        'ingredients': {
+          'Vodka': '2 oz',
+          'Ginger Beer': '3 oz',
+          'Lime Juice': 'half a lime'
+        },
+        'info': 'This spicy vodka-and-ginger cocktail bites back. The Moscow Mule marries the ' +
+              'clear spirit with ginger for a spicy kick. Lime adds a citrusy touch for a taste ' +
+              'that will keep you coming back for more.',
+        'glass': 'Highball glass'
+      },
+      'drink1': {
+        'imgsrc': 'resources/imgs/old-fashioned.jpg',
+        'name': 'Old Fashioned',
+        'ingredients': {
+          'American Whiskey': '2 oz',
+          'White Sugar': '0.5 tsp',
+          'Angostura Bitters': '3 dashes',
+          'Orange Bitters': '1 dash',
+          'Cold Water': '0.25 oz',
+          'Brown Sugar Cube': '1'
+        },
+        'info': 'The Old Fashioned cocktail is a old-school but never out of fasion.',
+        'glass': 'Rocks'
+      },
+      'drink2': {
+        'imgsrc': 'resources/imgs/manhattan1.jpg',
+        'name': 'Manhattan',
+        'ingredients': {
+          'Rye Whiskey': '2 oz',
+          'Sweet Vermouth': '1 oz',
+          'Angostura Bitters': '5 drops'
+        },
+        'info': 'The Manhattan cocktail-now this is what the Manhattan Project should\'ve been about.',
+        'glass': 'Cocktail glass'
+      }
+    }
+    function loadSamps() {
+      for(var i = 0; i < 3; i++) {
+        var samp = $('#samp' + i.toString());
+        var currentDrink = drinks['drink' + i.toString()];
+        var drinkimg = $(document.createElement('img'));
+        drinkimg.attr('src', currentDrink.imgsrc);
+        samp.append(drinkimg);
+
+        var wrap = $(document.createElement('div'));
+        var details = $(document.createElement('ul'));
+        wrap.append(details);
+        samp.append(wrap);
+
+        var name = $(document.createElement('li'));
+        details.append(name);
+        name.text('Name: ' + currentDrink.name);
+
+        var ingrs = $(document.createElement('li'));
+        ingrs.text('Ingredients:');
+        var ingrsList = $(document.createElement('ul'));
+        ingrsList.css({
+          'padding-left': '10px'
+        });
+        ingrs.append(ingrsList);
+        for(var ingrkey in currentDrink.ingredients) {
+          var ingr = $(document.createElement('li'));
+          ingrsList.append(ingr);
+          ingr.text(ingrkey + ": " + currentDrink.ingredients[ingrkey]);
+        }
+        details.append(ingrs);
+
+        var glass = $(document.createElement('li'));
+        details.append(glass);
+        glass.text('GlassType: ' + currentDrink.glass);
+      }
+    }
+  </script>
+  <style type="text/css">
+    #ingredientsearch, #namesearch {
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+    }
+    #sampledrinks {
+      text-align: center;
+    }
+    .sampImg < div {
+      height: 100%;
+      text-align: left;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    .sampImg {
+      border: solid 1px black;
+      width: 25%;
+      min-width: 180px;
+      height: 0;
+      min-height: 300px;
+      padding-bottom: 20%;
+      margin-bottom: 20px;
+      display: inline-block;
+      border-radius: 20px;
+      vertical-align: middle;
+    }
+    .sampImg ul{
+      padding-left: 8px;
+      text-align: left;
+      list-style-type: none;
+    }
+    #samp0, #samp2 {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    @media screen and (min-width:801px) {
+      .sampImg img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+    }
+    @media screen and (max-width:800px) {
+      .sampImg {
+        width: 80%;
+        min-height: 200px;
+        padding: 0;
+      }
+      .sampImg img {
+        height: 100%;
+        border-radius: 0;
+        float: right;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body onload="loadSamps()">
+  <div id="mainnav">
+    <ul id="globalnav" class="sitenav">
+      <li><a href="index.html">Home</a></li>
+      <li><a onclick="accessAsUser('mycocktails.html')">My Cocktails</a></li>
+      <li><a onclick="accessAsUser('myfavorites.html')">My Favorites</a></li>
+      <li><a onclick="accessAsUser('myShelf.html')">My Shelf</a></li>
+      <li><a href="about.html">About/FAQs</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="auth">
+        <ul>
+          <li id="signinli"><a class="authlink" href="signin.html">Sign in</a></li>
+          <li id="signoutli" class="hide"><a class="authlink" onclick="signOut()">Sign out</a></li>
+        </ul>
+      </li>
+      <li class="navicon">
+        <a href="javascript:;" onclick="navRespond()">&#9776;</a>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <h1>CocktailDex</h1>
+    <form id="ingredientsearch" action ="searchresults.html">
+      <!--h2>Search by ingredients:</h2-->
+      <input id = "omni" class="input1 r2" type="text" name ="query" placeholder="Search Cocktails"/>
+      <!-- input class="search mt10" type="submit" value="Search"/-->
+      
+    </form>
+    
+    <br/>
+    <br/>
+    <h3>Here are a few of our favorite drinks that we recommend you try!</h3>
+    <br/>
+    <div id="sampledrinks" class="mt10">
+      <div class="sampImg" id="samp0"></div>
+      <div class="sampImg" id="samp1"></div>
+      <div class="sampImg" id="samp2"></div>
+    </div>
+  </div>
+  <footer>
+    <nav class="authors">
+      <a href="team.html">Meet our Team!</a>
+    </nav>
+  </footer>
+</body>
+</html>

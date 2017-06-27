@@ -1,0 +1,131 @@
+* {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+  min-width: 568px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+#content {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.sitenav {
+  background-color: #EEBEBE;
+  color: red;
+  border-radius: 0;
+  border-bottom: solid 1px #969696;
+  font-size: 18px;
+}
+
+@media screen and (max-width:900px) {
+  .sitenav {
+    font-size: 14px;
+  }
+}
+
+.input {
+  display: inline-block;
+  height: 26px;
+}
+
+.btnadd {
+  position: relative;
+  right: 2px;
+  width: 26px;
+  height: 26px;
+}
+
+.input1 {
+  position: relative;
+  right: 2px;
+  width: 174px;
+}
+
+.input2 {
+  width: 200px;
+}
+
+.favorite {
+  width: 100px;
+  float: right;
+  position: relative;
+  right: 20px;
+  top: 18px;
+}
+
+.search {
+  margin-top: 10px;
+  width: 200px;
+  height: 26px;
+}
+
+.searchheader {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.footer {
+  background-color: #EEBEBE;
+  padding: 20px 0;
+}
+
+.footer a {
+  float: right;
+}
+
+.drinkname {
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.resultswrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.resultscol {
+  width: 45%;
+  height: 600px;
+  border: solid 1px black;
+  overflow-y: scroll;
+
+  text-align: left;
+  display: inline-block;
+  padding: 10px;
+}
+
+.resultscol ul, ol {
+  padding-left: 10px;
+}
+
+.resultscol > ul > li {
+  list-style-type: none;
+}
+
+@media screen and (min-width:960px) {
+  #res1 {
+    margin-right: 5px;
+  }
+
+  #res2 {
+    margin-left: 5px;
+  }
+}

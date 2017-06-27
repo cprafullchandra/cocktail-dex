@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CocktailDex - Search Results</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="resources/css/ver_framework_style.css" media="screen"/>
+  <script type="text/javascript" src="resources/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    h4 {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+
+    #filter, {
+      display: inline-block;
+    }
+
+    #filterwrapper {
+      height: 600px;
+    }
+
+    #filterwrapper {
+      width: 20%;
+      min-width: 250px;
+      float: left;
+    }
+
+    #filter {
+      padding-left: 30px;
+      padding-right: 20px;
+    }
+
+    #filter ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    #filterbtn {
+      width: 100%;
+    }
+
+    @media screen and (max-width:960px) {
+      h5 {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+
+      #filterwrapper {
+        height: 230px;
+        width: 100%;
+        float: none;
+      }
+
+      #filter {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      #filterbtn {
+        width: 200px;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+
+      .categorywrapper {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        width: 30%;
+        margin: auto;
+        min-width: 150px;
+        padding: 0;
+      }
+
+      .categorywrapper li {
+        padding-left: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default sitenav">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CocktailDex</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="mycocktails.html">My Cocktails</a></li>
+          <li><a href="myfavorites.html">My Favorites</a></li>
+          <li><a href="myShelf.html">My Shelf</a></li>
+          <li><a href="about.html">About/FAQs</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="signin.html">Sign in</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div id="content">
+    <h1>Search Results</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div id="filter">
+            <h4>Filter your drinks!</h4>
+            <div class="categorywrapper">
+              <h5>Number of Ingredients:</h5>
+              <ul>
+                <li>
+                  <input id="num1" type="checkbox" name="num_ingredient" value="1" />
+                  <label for="num1">1-3</label><br />
+                </li>
+                <li>
+                  <input id="num2" type="checkbox" name="num_ingredient" value="2" />
+                  <label for="num2">4-5</label><br />
+                </li>
+                <li>
+                  <input id="num3" type="checkbox" name="num_ingredient" value="3" />
+                  <label for="num3">6+</label><br />
+                </li>
+              </ul>
+            </div>
+            <div class="categorywrapper">
+              <h5>Spirit Type:</h5>
+              <ul>
+                <li>
+                  <input id="spirit1" type="checkbox" name="spirit" value="1" />
+                  <label for="spirit1">Vodka</label><br />
+                </li>
+                <li>
+                  <input id="spirit2" type="checkbox" name="spirit" value="2" />
+                  <label for="spirit2">Whiskey</label><br />
+                </li>
+                <li>
+                  <input id="spirit3" type="checkbox" name="spirit" value="3" />
+                  <label for="spirit3">Rum</label><br />
+                </li>
+                <li>
+                  <input id="spirit4" type="checkbox" name="spirit" value="4" />
+                  <label for="spirit4">Wine</label><br />
+                </li>
+              </ul>
+            </div>
+            <div class="categorywrapper">
+              <h5>Glass Type:</h5>
+              <ul>
+                <li>
+                  <input id="glass1" type="checkbox" name="glass" value="1" />
+                  <label for="glass1">Low-ball</label><br />
+                </li>
+                <li>
+                  <input id="glass2" type="checkbox" name="glass" value="2" />
+                  <label for="glass2">High-ball</label><br />
+                </li>
+                <li>
+                  <input id="glass3" type="checkbox" name="glass" value="3" />
+                  <label for="glass3">Martini</label><br />
+                </li>
+                <li>
+                  <input id="glass4" type="checkbox" name="glass" value="4" />
+                  <label for="glass4">Cocktail</label><br />
+                </li>
+              </ul>
+            </div>
+            <input id="filterbtn" type="submit" value="Filter"/>
+          </div>
+        </div>
+
+        <div class="resultswrapper text-center col-md-9">
+          <div id="res1" class="resultscol">
+            <ul>
+              <li>
+                <div>
+                  <h2 class="drinkname">Cocktail1</h2>
+                  <button class="favorite" type="button">Favorite</button>
+                  <div>
+                    <dl>
+                      <dt>Glass Type:</dt>
+                      <dd>
+                        GlassType
+                      </dd>
+                      <dt>Ingredients:</dt>
+                      <dd>
+                        <ul>
+                          <li>Ingredient1</li>
+                          <li>Ingredient2</li>
+                          <li>Ingredient3</li>
+                        </ul>
+                      </dd>
+                      <dt>Information:</dt>
+                      <dd>
+                        Information
+                      </dd>
+                      <dt>Instructions</dt>
+                      <dd>
+                        <ol>
+                          <li>Instruction1</li>
+                          <li>Instruction2</li>
+                          <li>Instruction3</li>
+                        </ol>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2 class="drinkname">Cocktail2</h2>
+                  <button class="favorite" type="button">Favorite</button>
+                  <div>
+                    <dl>
+                      <dt>Glass Type:</dt>
+                      <dd>
+                        GlassType
+                      </dd>
+                      <dt>Ingredients:</dt>
+                      <dd>
+                        <ul>
+                          <li>Ingredient1</li>
+                          <li>Ingredient2</li>
+                          <li>Ingredient3</li>
+                        </ul>
+                      </dd>
+                      <dt>Information:</dt>
+                      <dd>
+                        Information
+                      </dd>
+                      <dt>Instructions</dt>
+                      <dd>
+                        <ol>
+                          <li>Instruction1</li>
+                          <li>Instruction2</li>
+                          <li>Instruction3</li>
+                        </ol>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="res2" class="resultscol">
+            <ul>
+              <li>
+                <div>
+                  <h2 class="drinkname">Cocktail3</h2>
+                  <button class="favorite" type="button">Favorite</button>
+                  <div>
+                    <dl>
+                      <dt>Glass Type:</dt>
+                      <dd>
+                        GlassType
+                      </dd>
+                      <dt>Ingredients:</dt>
+                      <dd>
+                        <ul>
+                          <li>Ingredient1</li>
+                          <li>Ingredient2</li>
+                          <li>Ingredient3</li>
+                        </ul>
+                      </dd>
+                      <dt>Information:</dt>
+                      <dd>
+                        Information
+                      </dd>
+                      <dt>Instructions</dt>
+                      <dd>
+                        <ol>
+                          <li>Instruction1</li>
+                          <li>Instruction2</li>
+                          <li>Instruction3</li>
+                        </ol>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link active" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="team.html">Authors</a>
+    </div>
+  </footer>
+</body>
+</html>

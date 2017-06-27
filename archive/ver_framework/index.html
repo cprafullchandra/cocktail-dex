@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CocktailDex - Home</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="resources/css/ver_framework_style.css" media="screen"/>
+  <script type="text/javascript" src="resources/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    #content {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 18px;
+      padding: 0;
+      margin: 0;
+    }
+
+    div.col-md-3 > img {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      width: 100%;
+    }
+
+    .sampImg {
+      border: solid 1px black;
+      border-radius: 20px;
+      min-height: 500px;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default sitenav">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CocktailDex</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="mycocktails.html">My Cocktails</a></li>
+          <li><a href="myfavorites.html">My Favorites</a></li>
+          <li><a href="myShelf.html">My Shelf</a></li>
+          <li><a href="about.html">About/FAQs</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="signin.html">Sign in</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div id="content">
+    <h1>CocktailDex</h1>
+    <form id="ingredientsearch">
+      <h2 class="searchheader">Search by ingredients:</h2>
+      <button class="btnadd" value="additem">+</button><input class="input1" type="text" placeholder="&nbsp; ie. whiskey"/><br />
+      <button class="search" type="submit" value="Search">Search</button>
+      <br /><a href="searchresults.html">Temporary link to search page.</a>
+    </form>
+
+    <h3 id="searchdivider">or</h3>
+
+    <form id="namesearch">
+      <h2 class="searchheader">Search by drink name:</h2>
+      <input class="input2" type="text" placeholder="&nbsp; ie. moscow mule"/><br />
+      <input class="search" type="submit" value="Search"/>
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="sampImg col-md-3 col-md-offset-1">
+        <img src = "http://lorempixel.com/400/200/" alt="placeholder"/>
+        <p>Placeholder text for details for sample drink 0.</p>
+      </div>
+      <div class="sampImg col-md-3 col-md-offset-1">
+        <img src = "http://lorempixel.com/401/200/" alt="placeholder"/>
+        <p>Placeholder text for details for sample drink 1.</p>
+      </div>
+      <div class="sampImg col-md-3 col-md-offset-1">
+        <img src = "http://lorempixel.com/399/200/" alt="placeholder"/>
+        <p>Placeholder text for details for sample drink 2.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <a href="../index.html">Framework Version</a>
+      <a href="team.html">Authors</a>
+    </div>
+  </footer>
+</body>
+</html>

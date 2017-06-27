@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen"/>
+  <script src="resources/js/jquery-3.1.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="resources/js/app.js"></script>
+  <script src="resources/js/navbar.js"></script>
+  <title>CocktailDex - Meet the Team!</title>
+  <style>
+    th, td {
+      padding: 40px;
+    }
+    .textcenter {
+      text-align: justify;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      color: #424747;
+    }
+    .big {
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+      padding: 20px 20px 0px 20px;
+      color: #424747;
+    }
+    .small {
+      font-size: 16px;
+      font-weight: lighter;
+      text-transform: none;
+      line-height: normal;
+      padding: 10px 20px 20px 20px;
+      color: #424747;
+    }
+    .name {
+      font-size: 22px;
+      color: #424747;
+    }
+    .profile {
+      width:250px;
+      height:250px;
+    }
+  </style>
+</head>
+<body>
+  <div id="mainnav">
+    <ul id="globalnav" class="sitenav">
+      <li><a href="index.html">Home</a></li>
+      <li><a onclick="accessAsUser('mycocktails.html')">My Cocktails</a></li>
+      <li><a onclick="accessAsUser('myfavorites.html')">My Favorites</a></li>
+      <li><a onclick="accessAsUser('myShelf.html')">My Shelf</a></li>
+      <li><a href="about.html">About/FAQs</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="auth">
+        <ul>
+          <li id="signinli"><a class="authlink" href="signin.html">Sign in</a></li>
+          <li id="signoutli" class="hide"><a class="authlink" onclick="signOut()">Sign out</a></li>
+        </ul>
+      </li>
+      <li class="navicon">
+        <a href="javascript:;" onclick="navRespond()">&#9776;</a>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <h1 class="center">The CocktailDex Team</h1>
+    <div class="center">
+      <h2 class="textcenter big">Summary</h2>
+      <p class="textcenter small">
+        The objective of this app is to allow users to easily
+        navigate through different types of cocktails and drink
+        mixes. Not only can users search for drinks based on their
+        names but they can also search based on the ingredients
+        they have in their own cabinets. The search results can
+        be filtered based on the spirit (drink type), glass type,
+        or number of ingredients necessary for the drink.
+        Information on how to create the drink properly can be
+        found under the description of the drinks on click. Are
+        you a new to alcohol or cocktails? Are you a
+        professional cocktail builder or alcoholic? Doesn't
+        matter because CocktailDex can be useful for all levels
+        of drinkers!
+      </p>
+      <h2 class="textcenter big">The Team</h2>
+      <p class="textcenter small">
+        The CocktailDex team are a group of computer science and engineering students who are aspiring to be future innovators of different software areas. Here are our engineers!
+      </p>
+      <table class="textcenter">
+        <tr>
+          <th>
+            <img class="profile" alt="djku" src="resources/imgs/djku.jpg">
+            <p class="name">Daniel Ku</p>
+            <p>
+              Age: 23<br/>
+              Email: danielku93@gmail.com<br/>
+              "You can say iOS Development is my passion!"
+            </p>
+          </th>
+          <th>
+            <img class="profile" alt="cprafullchandra" src="resources/imgs/cprafullchandra.jpg">
+            <p class="name">Chiraag Prafullchandra</p>
+            <p>
+              Age: "It's impolite to ask a man's age."<br/>
+              Email: removed<br/>
+              "Let's innovate securely!"
+            </p>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <img class="profile" alt="brandonjhuang" src="resources/imgs/brandonjhuang.jpg">
+            <p class="name">Brandon Huang</p>
+            <p>
+              Age: 21<br/>
+              Email: Brandonjhuang@gmail.com<br/>
+              "Graphic design is my passion!"
+            </p>
+          </th>
+          <th>
+            <img class="profile" alt="dcl004" src="resources/imgs/dcl004.jpg">
+            <p class="name">David Lee</p>
+            <p>
+              Age: 21<br/>
+              Email: lee.david.cs@gmail.com<br/>
+              "Aspiring to work in full stack web development!"
+            </p>
+          </th>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <nav class="authors">
+      <a href="team.html">Meet our Team!</a>
+    </nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CocktailDex - Register</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen" />
+  <script src="resources/js/jquery-3.1.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="resources/js/app.js"></script>
+  <script src="resources/js/navbar.js"></script>
+  <style type="text/css">
+    br{
+      line-height: 200%;
+    }
+    #btnSignUp {
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      background-color: #a82400;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div id="mainnav">
+    <ul id="globalnav" class="sitenav">
+      <li><a href="index.html">Home</a></li>
+      <li><a onclick="accessAsUser('mycocktails.html')">My Cocktails</a></li>
+      <li><a onclick="accessAsUser('myfavorites.html')">My Favorites</a></li>
+      <li><a onclick="accessAsUser('myShelf.html')">My Shelf</a></li>
+      <li><a href="about.html">About/FAQs</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="auth">
+        <ul>
+          <li id="signinli"><a class="authlink" href="signin.html">Sign in</a></li>
+          <li id="signoutli" class="hide"><a class="authlink" onclick="signOut()">Sign out</a></li>
+        </ul>
+      </li>
+      <li class="navicon">
+        <a href="javascript:;" onclick="navRespond()">&#9776;</a>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <h1>CocktailDex</h1>
+    <h4>Sign Up</h4>
+    <form onsubmit="javascript:return signUp();">
+      <input id="txtEmail" class="input2" type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/><br/>
+      <input id="txtPassword" class="input2 mt10" type="password" placeholder="Password" required/><br/>
+      <input id="txtConfirmPass" class="input2 mt10" type="password" placeholder="Confirm Password" oninput="check(this)" required/>
+      <br/><br/>
+      <script language='javascript' type='text/javascript'>
+        function check(input) {
+          if (input.value != document.getElementById('txtPassword').value) {
+            input.setCustomValidity('Password Must be Matching.');
+          } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+          }
+        }
+      </script>
+      <button id="btnSignUp" class="button buttonSignUp" type="submit">Sign Up</button>
+    </form>
+  </div>
+  <footer>
+    <nav class="authors">
+      <a href="team.html">Meet our Team!</a>
+    </nav>
+  </footer>
+</body>
+</html>

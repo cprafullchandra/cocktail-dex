@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="A quick and easy way to find and create cocktails!" />
+  <meta name="author" content="Brandon H., Chiraag P., Daniel K., David L." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CocktailDex - My Favorites</title>
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen" />
+  <script src="resources/js/jquery-3.1.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="resources/js/app.js"></script>
+  <script src="resources/js/navbar.js"></script>
+</head>
+<body onload="populateUserCocktailList('favorites');">
+  <div id="mainnav">
+    <ul id="globalnav" class="sitenav">
+      <li><a href="index.html">Home</a></li>
+      <li><a onclick="accessAsUser('mycocktails.html')">My Cocktails</a></li>
+      <li><a onclick="accessAsUser('myfavorites.html')">My Favorites</a></li>
+      <li><a onclick="accessAsUser('myShelf.html')">My Shelf</a></li>
+      <li><a href="about.html">About/FAQs</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li class="auth">
+        <ul>
+          <li id="signinli"><a class="authlink" href="signin.html">Sign in</a></li>
+          <li id="signoutli" class="hide"><a class="authlink" onclick="signOut()">Sign out</a></li>
+        </ul>
+      </li>
+      <li class="navicon">
+        <a href="javascript:;" onclick="navRespond()">&#9776;</a>
+      </li>
+    </ul>
+  </div>
+  <div id="content">
+    <h1>My Favorites</h1>
+    <div id="resultswrapper">
+      <div id="res1" class="resultscol borderonRight">
+        <ul id = "resultslist"></ul>
+      </div>
+      <div id="res2" class="resultscol">
+        <ul>
+          <li id='fullItem'></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <nav class="authors">
+      <a href="team.html">Meet our Team!</a>
+    </nav>
+  </footer>
+</body>
+</html>

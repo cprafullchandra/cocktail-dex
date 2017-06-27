@@ -1,0 +1,526 @@
+/** Normalize browser presentation */
+* {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color: #424747;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  padding-bottom: 4rem;
+  min-height: 100%;
+  min-width: 568px;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 1rem;
+  background-color: #EEBEBE;
+  color: inherit;
+}
+
+/** Top Navigation Bar */
+ul.sitenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #EEBEBE;
+  color: inherit;
+  border-bottom: solid 1px #969696;
+}
+
+ul.sitenav li {
+  float: left;
+}
+
+ul.sitenav li a {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: #424747;
+  background-color: inherit;
+  padding: 22px 16px;
+  transition: 0s;
+}
+
+ul.sitenav li a:hover:not(.authlink) {
+  background-color: #FBCBCB;
+  color: inherit;
+}
+
+ul.sitenav li.navicon {
+  display: none;
+}
+
+ul.sitenav li.auth {
+  float: right;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+ul.sitenav li.auth a {
+  padding: 20px 10px 20px 0px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+@media screen and (max-width:900px) {
+  ul.sitenav li a {
+    font-size: 14px;
+  }
+
+  ul.sitenav li.auth a {
+    font-size: 11px;
+  }
+
+  ul.sitenav li.auth {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.sitenav li a {
+    font-size: 18px;
+  }
+
+  ul.sitenav li.auth a {
+    font-size: 14px;
+  }
+
+  ul.sitenav li:not(:first-child) {
+    display: none;
+  }
+
+  ul.sitenav li.navicon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.sitenav a {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    padding: 22px 16px !important;
+  }
+  ul.sitenav.responsive { position: relative; }
+  ul.sitenav.responsive  li.navicon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul.sitenav.responsive li {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+#mainnav {
+  width: 100%;
+}
+
+#mainnav a {
+  text-decoration: none;
+}
+
+#mainnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#content {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #424747;
+  background-color: inherit;
+}
+
+textarea {
+  width: 220px;
+  height: 120px;
+}
+
+.sitenav a {
+  cursor: pointer;
+}
+
+a.authlink:link {
+  background-color: inherit;
+  color: #424747;
+  text-decoration: none;
+}
+
+a.authlink:visited {
+  color: #e55106;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+a.authlink:hover {
+  color: hotpink;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+a.authlink:active {
+  color: blue;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.addElem {
+  text-align: center;
+  border: solid 1px black;
+  
+  height: 26px;
+  box-sizing: border-box;
+}
+
+.input1 {
+  width: 174px;
+  height: 26px;
+  box-sizing: border-box;
+}
+
+.input3 {
+  width: 149px;
+  height: 26px;
+  box-sizing: border-box;
+}
+
+.input2 {
+  width: 200px;
+  height: 26px;
+  box-sizing: border-box;
+}
+
+.search {
+  width: 200px;
+  height: 26px;
+}
+
+.r2 {
+  position: relative;
+  right: 2px;
+}
+
+.l2 {
+  position: relative;
+  left: 2px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+nav.authors {
+  float: right;
+  padding-right: 20px;
+}
+
+nav.authors a:link {
+  color: #424747;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+nav.authors a:visited {
+  color: #e55106;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+nav.authors a:hover {
+  color: hotpink;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+nav.authors a:active {
+  color: blue;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+div.user-form {
+  width: 200px;
+  margin: 0 auto;
+}
+
+ul.user-data {
+  text-align: left;
+  position: relative;
+  list-style-type: square;
+  padding: 0;
+}
+
+.drinkname {
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  background-color: inherit;
+}
+
+.favorite {
+  height: 26px;
+  width: 70px;
+  float: right;
+  position: relative;
+  right: 10px;
+  top: 15px;
+  box-sizing: border-box;
+}
+
+.resultsBtn {
+  height: 26px;
+  width: 70px;
+  box-sizing: border-box;
+}
+
+.dropdownmenu {
+  width: 200px;
+  height: 26px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  background-color: inherit;
+  color: inherit;
+}
+
+#resultswrapper {
+  overflow: hidden;
+  text-align: center;
+}
+
+#res1 {
+  float: none;
+  margin: 0;
+}
+
+.resultscol {
+  width: 45%;
+  height: 600px;
+  /*border-right: 1px solid black;*/
+  overflow-y: scroll;
+  text-align: left;
+  float: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+.borderonRight {
+  border-right: 1px solid black;
+}
+
+.resultscol ul, ol {
+  padding-left: 10px;
+}
+
+.resultscol > ul > li {
+  list-style-type: none;
+}
+
+.resultscol > ul > li > div > h2 {
+  text-decoration: underline;
+  color: #e55106;
+}
+
+.resultscol dt {
+  font-style: italic;
+  line-height: 2;
+}
+
+@media screen and (min-width:960px) {
+  .resultscol {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width:960px) {
+  #resultswrapper {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.btn-close {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  line-height: 16px;
+  background-color: #333;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.relative {
+  position: relative;
+  padding: 32px 16px;
+}
+
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.7);
+  color: inherit;
+  transition: .4s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+}
+
+.modal-content {
+  width: 420px;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  background-color: #ffffff;
+  color: inherit;
+}
+
+.modal-opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+#ingredientslist, #instructionslist {
+  margin: 0 auto;
+  list-style-position: outside;
+  padding: 0;
+}
+
+#ingredientslist {
+  width: 200px;
+}
+
+#instructionslist {
+  width: 300px;
+}
+
+#ingredientslist li, #instructionslist li {
+  cursor: pointer;
+  text-align: left;
+  padding-left: 0;
+  padding-top: 10px;
+}
+
+#ingredientslist *, #instructionslist * {
+  vertical-align: middle;
+}
+
+#ingredientslist {
+  list-style-type: square;
+}
+
+#instructionslist > li > span {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.itemli {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.btnDelete, .btnEdit {
+  cursor: pointer;
+  display: none;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  padding: 0;
+}
+
+.taphover:hover .itemli, .taphover.hover .itemli {
+  display: none;
+}
+
+.taphover:hover .btnDelete,
+.taphover.hover .btnDelete,
+.taphover:hover .btnEdit,
+.taphover.hover .btnEdit {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.showInlineBlock {
+  display: inline-block;
+}
+
+.showBlock {
+  display: block;
+}
+
+.tnImg {
+  width: 200px;
+  height: 200px;
+  border: solid 2px black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+#omni{
+  width: 80%;
+  height: 40px;
+  background-color: rgb(245,245,245);
+  border-color: rgb(100,100,100);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  padding-left: 10px;
+  font-size: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: rgb(100,100,100);
+}
